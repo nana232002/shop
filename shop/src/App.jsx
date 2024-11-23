@@ -6,6 +6,7 @@ import AddProduct from './component/product/AddProduct';
 import { addUserToMockAPI ,postNewProduct,fetchProduct} from './api';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProductPage from "./component/product/ProductPage";
+import Navbar from "./component/navbar/navbar";
 function App() {
 
   const handleAddUser = async () => {
@@ -36,14 +37,15 @@ useEffect(()=>{
   
   return (
     <>
-     {/* <Router>
+     <Router>
       <Routes>
         <Route path="/" element={ <Loginpage setName={setName} setPassword={setPassword} userName={Name} password={password}/>} />
         <Route path="/ProductPage" element={ <ProductPage Product={Product}/>} />
         <Route path="/AddProduct" element={ <AddProduct addproduct={addproduct}/>} />
       </Routes>
-    </Router>  */}
-   <ProductPage Product={Product}/>
+    </Router> 
+   {/* <ProductPage Product={Product}/> */}
+   {/* <Navbar/> */}
     
     </>
   )

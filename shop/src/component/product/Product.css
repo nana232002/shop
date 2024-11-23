@@ -29,3 +29,12 @@ li {
   strong {
     color: #4caf50;
   }
+ .list{
+    display: flex;
+    flex-direction: row;
+    gap : 7px;
+ }
+ .container{
+    display: flex;
+    
+ }

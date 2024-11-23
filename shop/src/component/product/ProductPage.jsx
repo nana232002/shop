@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductItem from './ProductItem'
 import './Product.css'
+import Navbar from '../navbar/navbar';
 
 export default function ProductPage({Product}) {
     if (!Product || !Array.isArray(Product)) {
@@ -8,12 +9,21 @@ export default function ProductPage({Product}) {
       }
   return (
     <>
+    <div className='container'>
+    <Navbar/>
+    <div>
     <h2>Products List</h2>
-      <ul>
+    <div className='list'>
+      {/* <ul> */}
         {Product.map((product) => (
           <ProductItem key={product.id} Product={product} />
         ))}
-      </ul>
+      {/* </ul> */}
+      </div>
+    </div>
+    </div>
+    
+    
     </>
     
   );

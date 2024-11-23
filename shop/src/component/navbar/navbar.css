@@ -1,0 +1,42 @@
+/* Basic styling for the navbar */
+.navbar {
+   
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 98%;
+        height: 4rem;
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color:white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo1 {
+    
+    height: 8vh; /* Adjust the logo size */
+    width: auto;
+  }
+  
+  .nav-buttons {
+    display: flex;
+    gap: 20px;  /* Space between buttons */
+  }
+  
+  .nav-button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #ff4081; /* Pink background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    background-color: #e0246d;  /* Darker pink on hover */
+  }
+  

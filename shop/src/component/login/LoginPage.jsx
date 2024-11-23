@@ -16,7 +16,7 @@ const handleSubmit = async (e) => {
             );
         
             if (user) {
-                navigate("/AddProduct");
+                navigate("/ProductPage");
             } else {
           alert("invalid userName or Password")
             }

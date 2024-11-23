@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './addproduct.css'
+import Navbar from '../navbar/navbar';
 export default function AddProduct({addproduct}) {
 
   const [productName,setProductName]=useState("");
@@ -22,6 +23,7 @@ export default function AddProduct({addproduct}) {
  
   return (
       <>
+      <Navbar/>
 <form className='form1'  onSubmit={handleSubmit}>
 <img className="logo" src="/images/nanaLogo.png" alt="Logo" />
     <div className='form-group'>

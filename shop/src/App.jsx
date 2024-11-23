@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from 'react';
 import './App.css';
 import Loginpage from './component/login/LoginPage';
 import AddProduct from './component/product/AddProduct';
-import { addUserToMockAPI } from './api';
+import { addUserToMockAPI ,postNewProduct,fetchProduct} from './api';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ProductPage from "./component/product/ProductPage";
 function App() {
 
   const handleAddUser = async () => {
@@ -18,19 +19,31 @@ function App() {
   
   const [Name ,setName] =useState("");
   const [password ,setPassword] =useState("");
-  console.log(Name);
-  console.log(password);
+  const [Product,setProduct]= useState([]);
   
+useEffect(()=>{
+  fetchProduct().then((data)=>{
+  setProduct(data);
+  });
+  },[]);
+  
+    function addproduct(newproduct){
+      postNewProduct(newproduct).then((data)=>{
+        setProduct((prevProduct)=>[...prevProduct,data]);
+      });
+      
+    }
   
   return (
     <>
-     <Router>
+     {/* <Router>
       <Routes>
         <Route path="/" element={ <Loginpage setName={setName} setPassword={setPassword} userName={Name} password={password}/>} />
-        <Route path="/AddProduct" element={ <AddProduct/>} />
+        <Route path="/ProductPage" element={ <ProductPage Product={Product}/>} />
+        <Route path="/AddProduct" element={ <AddProduct addproduct={addproduct}/>} />
       </Routes>
-    </Router> 
-   
+    </Router>  */}
+   <ProductPage Product={Product}/>
     
     </>
   )

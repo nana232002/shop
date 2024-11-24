@@ -88,3 +88,20 @@ export const addUserToMockAPI = async (username, password) => {
     
 }
  };
+
+
+ export const deleteProduct = async (id) => {
+  try {
+    const response = await fetch(`https://6740f22bd0b59228b7f1d8c7.mockapi.io/products/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error(`Failed to delete product with ID ${id}: ${response.status}`);
+    }
+    return true; // Return success
+  } catch (error) {
+    console.error("Error deleting product:", error);
+    return false; // Return failure
+  }
+};

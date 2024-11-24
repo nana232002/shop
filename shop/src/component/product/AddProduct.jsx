@@ -15,7 +15,6 @@ export default function AddProduct({addproduct}) {
       imageURL: productimg,
     };
     addproduct(newProduct);
-    addproduct (newProduct);
     setDescription("");
     setProductImg("");
     setProductName("");

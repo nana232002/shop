@@ -21,7 +21,7 @@ function App() {
   const [Name ,setName] =useState("");
   const [password ,setPassword] =useState("");
   const [Product,setProduct]= useState([]);
-  
+ 
 useEffect(()=>{
   fetchProduct().then((data)=>{
   setProduct(data);
@@ -40,13 +40,11 @@ useEffect(()=>{
      <Router>
       <Routes>
         <Route path="/" element={ <Loginpage setName={setName} setPassword={setPassword} userName={Name} password={password}/>} />
-        <Route path="/ProductPage" element={ <ProductPage Product={Product}/>} />
+        <Route path="/ProductPage" element={ <ProductPage Product={Product} setProduct={setProduct} />} />
         <Route path="/AddProduct" element={ <AddProduct addproduct={addproduct}/>} />
       </Routes>
     </Router> 
-   {/* <ProductPage Product={Product}/> */}
-   {/* <Navbar/> */}
-    
+ 
     </>
   )
 }

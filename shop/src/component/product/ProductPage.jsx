@@ -3,7 +3,7 @@ import ProductItem from './ProductItem'
 import './Product.css'
 import Navbar from '../navbar/navbar';
 
-export default function ProductPage({Product}) {
+export default function ProductPage({ Product, setProduct}) {
     if (!Product || !Array.isArray(Product)) {
         return <p>No products available</p>;
       }
@@ -16,7 +16,7 @@ export default function ProductPage({Product}) {
     <div className='list'>
       {/* <ul> */}
         {Product.map((product) => (
-          <ProductItem key={product.id} Product={product} />
+          <ProductItem key={product.id} Product={product} setProduct={setProduct}/>
         ))}
       {/* </ul> */}
       </div>
